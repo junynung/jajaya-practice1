@@ -1,14 +1,78 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hello World</title>
-  <link href='/style.css' rel='stylesheet'>
+  <title>내일 뭐 입지? | 대한민국 도시별 옷차림 추천</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <h1>Hello, world!</h1>
-  <button onclick="console.log('hello');">Press me</button>
-  <script defer type="text/javascript" src="/main.js"></script>
+  <div class="bg-orb orb-1" aria-hidden="true"></div>
+  <div class="bg-orb orb-2" aria-hidden="true"></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+
+  <main class="page">
+    <header class="hero">
+      <p class="eyebrow">Tomorrow Outfit</p>
+      <h1>내일 날씨에 맞는 옷차림</h1>
+      <p class="subtitle">대한민국 도시를 선택하면 내일 기온·강수·바람을 반영해 옷차림을 추천해줘요.</p>
+    </header>
+
+    <section class="panel">
+      <div class="field-group">
+        <label for="city-input">도시 선택 (대한민국)</label>
+        <div class="search-row">
+          <input id="city-input" type="search" placeholder="예: 서울, 부산, 대구" autocomplete="off" aria-controls="city-results" aria-autocomplete="list" aria-expanded="false" />
+          <button id="use-seoul" class="ghost" type="button">서울 빠르게 선택</button>
+        </div>
+        <div id="city-results" class="results" role="listbox" aria-label="도시 검색 결과"></div>
+      </div>
+
+      <div class="field-group">
+        <span class="label">성별 선택</span>
+        <div class="toggle" role="tablist" aria-label="성별 선택">
+          <button class="toggle-btn active" data-gender="female" role="tab" aria-selected="true">여자</button>
+          <button class="toggle-btn" data-gender="male" role="tab" aria-selected="false">남자</button>
+        </div>
+      </div>
+
+      <div class="status" id="status">도시를 선택하면 내일 추천이 나타납니다.</div>
+      <div class="meta" id="feels-meta">체감 온도 기반으로 추천해요.</div>
+
+      <section class="result" id="result" aria-live="polite">
+        <div class="result-head">
+          <div>
+            <p class="result-city" id="result-city">—</p>
+            <p class="result-date" id="result-date">—</p>
+          </div>
+          <div class="temp-box">
+            <p class="temp-main" id="result-temp">—</p>
+            <p class="temp-range" id="result-range">—</p>
+          </div>
+        </div>
+
+        <div class="result-body">
+          <div>
+            <p class="section-title">날씨 요약</p>
+            <p id="result-summary" class="summary">—</p>
+          </div>
+          <div>
+            <p class="section-title">추천 옷차림</p>
+            <ul id="result-outfit" class="outfit-list"></ul>
+          </div>
+          <div>
+            <p class="section-title">보너스 팁</p>
+            <ul id="result-tips" class="tip-list"></ul>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <footer class="footer">
+      <p>데이터 제공: Open-Meteo (날씨), GeoNames (지오코딩)</p>
+    </footer>
+  </main>
+
+  <script src="/main.js" defer></script>
 </body>
 </html>
