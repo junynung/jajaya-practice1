@@ -68,6 +68,33 @@
       </section>
     </section>
 
+    <section class="contact">
+      <div class="contact-head">
+        <p class="eyebrow">Partnership</p>
+        <h2>제휴 문의</h2>
+        <p class="subtitle">간단한 정보만 남겨주시면 빠르게 답변드릴게요.</p>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/xvzbwwzw" method="POST">
+        <div class="form-row">
+          <label for="contact-name">이름</label>
+          <input id="contact-name" name="name" type="text" placeholder="홍길동" required />
+        </div>
+        <div class="form-row">
+          <label for="contact-email">이메일</label>
+          <input id="contact-email" name="email" type="email" placeholder="hello@example.com" required />
+        </div>
+        <div class="form-row">
+          <label for="contact-company">회사/브랜드</label>
+          <input id="contact-company" name="company" type="text" placeholder="브랜드명 (선택)" />
+        </div>
+        <div class="form-row">
+          <label for="contact-message">문의 내용</label>
+          <textarea id="contact-message" name="message" rows="4" placeholder="협업 목적과 희망 일정을 알려주세요." required></textarea>
+        </div>
+        <button class="submit" type="submit">제휴 문의 보내기</button>
+      </form>
+    </section>
+
     <footer class="footer">
       <p>데이터 제공: Open-Meteo (날씨), GeoNames (지오코딩)</p>
     </footer>
